@@ -1,0 +1,219 @@
+{
+  "version": "1.00",
+  "notes": "This is the first code version",
+  "server": {
+    "host": "127.0.0.1",
+    "port": 80
+  },
+  "aedes": {
+    "host": "localhost",
+    "port": 1883
+  },
+  "telegram": {
+    "webhook": "",
+    "isPolling": true,
+    "inlineKeyboards": [
+      {
+        "encoded": false,
+        "code": "/start",
+        "display": "Select node type",
+        "keyboard": [
+          [
+            {
+              "text": "MQTT",
+              "callback_data": "/mqtt"
+            },
+            {
+              "text": "SOCKET IO",
+              "callback_data": "/socketio"
+            },
+            {
+              "text": "IFTTT",
+              "callback_data": "/ifttt"
+            },
+            {
+              "text": "NFOX",
+              "callback_data": "/nfox"
+            },
+            {
+              "text": "EXECUTE",
+              "callback_data": "/exec"
+            },
+            {
+              "text": "CAMS",
+              "callback_data": "/cams"
+            }
+          ]
+        ]
+      },
+      {
+        "encoded": false,
+        "code": "/mqtt",
+        "display": "Select mqtt node",
+        "keyboard": [
+          [
+            {
+              "text": "ESP01",
+              "callback_data": "/mqtt/esp01"
+            },
+            {
+              "text": "MQTTDash",
+              "callback_data": "/mqtt/mqttdash"
+            }
+          ]
+        ]
+      },
+      {
+        "encoded": false,
+        "code": "/socketio",
+        "display": "Select message to pass?",
+        "keyboard": [
+          [
+            {
+              "text": "STATUS",
+              "callback_data": "/socketio/status"
+            }
+          ]
+        ]
+      },
+      {
+        "encoded": false,
+        "code": "/ifttt",
+        "display": "Select ifttt device command",
+        "keyboard": [
+          [
+            {
+              "text": "HALL On",
+              "callback_data": "/ifttt/hallon"
+            },
+            {
+              "text": "HALL Off",
+              "callback_data": "/ifttt/halloff"
+            }
+          ]
+        ]
+      },
+      {
+        "encoded": false,
+        "code": "/nfox",
+        "display": "Select nfox node",
+        "keyboard": [
+          [
+            {
+              "text": "BELL",
+              "callback_data": "/nfox/Nightfox_1000001"
+            },
+            {
+              "text": "INNERBELL",
+              "callback_data": "/nfox/Nightfox_1000002"
+            }
+          ]
+        ]
+      },
+      {
+        "encoded": true,
+        "code": "/nfox/{NFOX}",
+        "display": "Select {NFOX} operation",
+        "keyboard": [
+          [
+            {
+              "text": "On",
+              "callback_data": "/nfox/{NFOX}/on"
+            },
+            {
+              "text": "Off",
+              "callback_data": "/nfox/{NFOX}/off"
+            }
+          ]
+        ]
+      },
+      {
+        "encoded": true,
+        "code": "/nfox/{NFOX}/{OP}",
+        "display": "Select {NFOX} [Turn {OP}] time, or you may choose to permanently keep it turned {OP}",
+        "keyboard": [
+          [
+            {
+              "text": "30 Min",
+              "callback_data": "/nfox/{NFOX}/{OP}/30"
+            },
+            {
+              "text": "1 Hour",
+              "callback_data": "/nfox/{NFOX}/{OP}/60"
+            },
+            {
+              "text": "Permanently",
+              "callback_data": "/nfox/{NFOX}/{OP}/0"
+            }
+          ]
+        ]
+      },
+      {
+        "encoded": false,
+        "code": "/exec",
+        "display": "Select Command to Execute",
+        "keyboard": [
+          [
+            {
+              "text": "REVERSE SSH",
+              "callback_data": "/exec/reversessh"
+            },
+            {
+              "text": "PS -EF",
+              "callback_data": "/exec/ps-ef"
+            },
+            {
+              "text": "Status",
+              "callback_data": "/exec/status"
+            },
+            {
+              "text": "Reboot",
+              "callback_data": "/exec/reboot"
+            }
+          ]
+        ]
+      },
+      {
+        "encoded": false,
+        "code": "/cams",
+        "display": "Select Camera group",
+        "keyboard": [
+          [
+            {
+              "text": "ALL",
+              "callback_data": "/cams/snapshot/all"
+            },
+            {
+              "text": "BACK",
+              "callback_data": "/cams/snapshot/back"
+            },
+            {
+              "text": "GATE",
+              "callback_data": "/cams/snapshot/gate"
+            },
+            {
+              "text": "DOOR",
+              "callback_data": "/cams/snapshot/door"
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "environmentSettings": {
+    "os": "windows",
+    "slash": "\\",
+    "move": "move",
+    "copy": "copy",
+    "delete": "del",
+    "newfolder": "mkdir"
+  },
+  "environmentSettingsLin": {
+    "os": "unix",
+    "slash": "/",
+    "move": "mv",
+    "copy": "cy",
+    "delete": "rm",
+    "newfolder": "mkdir"
+  }
+}
